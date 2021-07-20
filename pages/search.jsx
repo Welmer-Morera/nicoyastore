@@ -2,15 +2,15 @@ import React from 'react'
 import Layout from '../components/layouts/layout'
 
 
-const  Home =()=> {
+const  Search =()=> {
   return (
    <div>
      <Layout>
-     <h1>Inicio</h1>
+     <h1>Search</h1>
      </Layout>
      
    </div>
   )
 }
 
-export default Home
+export default Search
