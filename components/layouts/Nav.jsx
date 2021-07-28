@@ -6,11 +6,12 @@ import { FirebaseContext } from '../../firebase';
 const Nave=  styled.nav`
 padding-left:2rem;
  a{
-     font-size: 1.8 rem;
-      margin-left: 2rem;
+     font-size: 1.6rem;
+      margin-left: 1rem;
+      
       color: var(--verde);
       &:last-of-type{
-          margin-right: 0;
+          margin-right: 1rem;
       }
 
  }
@@ -24,7 +25,7 @@ const Nav = () => {
         <Nave>
             <Link href="/">Inicio</Link>
             <Link href="/popular">Populares</Link>
-            {usuario&&(<Link href="/newProduct">Nuevo Producto</Link>)}
+            {usuario&&(<Link href="/NuevoProducto">+ Producto</Link>)}
             
 
         </Nave>

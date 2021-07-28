@@ -29,7 +29,7 @@ export const CampoDiv = styled.div`
     textarea {
         height: 400px;
     }
-`;
+`; 
 
 export const InputS = styled.input`
     background-color: var(--verde);
@@ -64,4 +64,5 @@ export const Error = styled.p`
 export const H1= styled.h1`
 text-align: center;
            margin-top: 5rem;
+           font-family: 'Bebas Neue', cursive;
 `;

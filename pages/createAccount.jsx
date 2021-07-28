@@ -1,6 +1,6 @@
 import React, { Fragment,useState } from 'react'
-import Layout from '../components/layouts/layout'
-import { Formulario,CampoDiv,InputS, H1,Error } from '../components/IU/formulario'
+
+import { Formulario,CampoDiv,InputS, H1,Error,DivPri, Div } from '../components/IU/formularioLogin'
 import Router from 'next/router'
 import firebase from '../firebase'
 import useValidacion from '../Hooks/useValidacion'
@@ -16,7 +16,7 @@ const CreateAccount = () => {
   
 
   const [error, setError] = useState(false)
-  const {valores,errores,submitForm,handleSubmit,handleChange,handleBlur}=useValidacion(INITIAL_STATE,validarCrearCuenta,crearCuenta)
+  const {valores,errores,handleSubmit,handleChange,handleBlur}=useValidacion(INITIAL_STATE,validarCrearCuenta,crearCuenta)
   const {nombre, email, password}= valores
 
   async function crearCuenta() {
@@ -25,13 +25,13 @@ const CreateAccount = () => {
       Router.push('/');
     } catch (error) {
       console.error('Hubo un error al crear el usuario ', error.message);
-      setError(error.message);
+      setError(error);
     }
   }
   return (
-    <div>
-      <Layout>
-        <Fragment>
+    <DivPri>
+      
+        <Div>
           <H1>Nueva Cuenta</H1>
           <Formulario 
           
@@ -79,12 +79,12 @@ const CreateAccount = () => {
             <InputS type="submit" value="Crear Cuenta" />
           </Formulario>
 
-        </Fragment>
+        </Div>
 
 
-      </Layout>
+      
 
-    </div>
+    </DivPri>
   )
 }
 

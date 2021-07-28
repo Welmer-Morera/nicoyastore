@@ -1,6 +1,6 @@
 import React, { Fragment,useState } from 'react'
-import Layout from '../components/layouts/layout'
-import { Formulario,CampoDiv,InputS, H1,Error } from '../components/IU/formulario'
+
+import { Formulario,CampoDiv,InputS, H1,Error,Div,Logo,DivPri } from '../components/IU/formularioLogin'
 import Router from 'next/router'
 import firebase from '../firebase'
 import useValidacion from '../Hooks/useValidacion'
@@ -22,17 +22,28 @@ const  Login =()=> {
     try {
        await firebase.login(email, password);
       Router.push('/');
-    } catch (error) {
-      console.error('Hubo un error al autenticar el usuario ', error.message);
+    } catch (error)  {
       setError(error.message);
       console.log(error.message)
     }
   }
   return (
-    <div>
-      <Layout>
+    <DivPri>
+     
         <Fragment>
-          <H1>Iniciar Sesión</H1>
+        
+               
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&display=swap" rel="stylesheet" />
+                <link href="/static/css/app.css" rel="stylesheet"/>
+            
+
+            
+          <Div>
+          <Logo>N <span>STORE</span></Logo>
+          <H1>Bienvenido</H1>
           <Formulario 
           
             onSubmit={handleSubmit}
@@ -67,13 +78,13 @@ const  Login =()=> {
             {error && <Error>{error}</Error>}
             <InputS type="submit" value="Iniciar Sesión" />
           </Formulario>
-
+          </Div>
         </Fragment>
 
 
-      </Layout>
+      
 
-    </div>
+    </DivPri>
   )
 }
 

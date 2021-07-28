@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layouts/layout'
 
 
-const  NewProduct =()=> {
+const  NuevoProducto =()=> {
   return (
    <div>
      <Layout>
@@ -13,4 +13,4 @@ const  NewProduct =()=> {
   )
 }
 
-export default NewProduct
+export default NuevoProducto
