@@ -1,5 +1,8 @@
 .listado-productos {
-    background-color: #f3f3f3;
+  margin-top: 50px;
+   
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .contenedor {
     max-width: 1200px;

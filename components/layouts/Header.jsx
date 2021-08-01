@@ -3,7 +3,6 @@ import Buscador from '../IU/Buscador';
 import Nav from './Nav';
 import Button from '../IU/button';
 import Link from 'next/link'
-import styled from '@emotion/styled';
 import { FirebaseContext } from '../../firebase';
 import { ContenedorHeader, Logo, HeaderStyle, Div2, Div1, P1, } from '../IU/headerStyle'
 
@@ -20,6 +19,7 @@ const Header = () => {
                     </Link>
                    
                     <Buscador />
+                    <Nav />
                 </Div1>
                 <Div2>
                     {usuario ? (
@@ -39,7 +39,7 @@ const Header = () => {
                             <Link href="/login">
                                 <Button bgColor="#11862f">Login</Button>
                             </Link>
-                            <Link href="/createAccount">
+                            <Link href="/Registro">
                                 <Button bgColor="#007fdb">Nueva Cuenta</Button>
                             </Link>
                         </Fragment>

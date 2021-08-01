@@ -17,8 +17,11 @@ export const Logo = styled.p`
     margin-right: 2rem;
 `
 export const HeaderStyle = styled.header`
-    border-bottom: 2px solid var(--cafe2);
-    padding: 1rem 0;
+    background-color: white;
+    padding: 0.1rem 0;
+    opacity:850%;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 export const Div2 = styled.div`
     display: flex;

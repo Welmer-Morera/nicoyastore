@@ -1,4 +1,4 @@
-import React, { Fragment,useState } from 'react'
+import React, {useState } from 'react'
 
 import { Formulario,CampoDiv,InputS, H1,Error,DivPri, Div } from '../components/IU/formularioLogin'
 import Router from 'next/router'

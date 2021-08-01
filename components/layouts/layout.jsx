@@ -27,6 +27,7 @@ const Layout = props => {
                         line-height: 1.5;
                         font-family: 'Inconsolata', sans-serif;
                         font-weight: bold;
+                        background-color:#D8E8FD ;
                     }
                     h1, h2, h3 {
                         margin: 0 0 2rem 0;
