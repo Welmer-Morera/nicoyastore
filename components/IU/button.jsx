@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
- const Button = styled.button`
+ const Button = styled.a`
 
  font-weight: 700;
  text-transform: none;

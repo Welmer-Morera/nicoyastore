@@ -4,20 +4,20 @@ export default function ValidarNuevoProducto(valores){
         errors.nombre="El Nombre es Obligatorio"
 
     }
-    if(!valores.emprendedor){
-        errors.emprendedor="El Nombre del Emprendedor o Compañia es Obligatorio"
-    }
-    if(!valores.url){
-        errors.url="El Url es necesario"
-    }else if(!/^(ftp|http|https):\/\/[^ "]+$/.test(valores.url)){
-        errors.url="El url es Incorrecto"
-    }
+    // if(!valores.emprendedor){
+    //     errors.emprendedor="El Nombre del Emprendedor o Compañia es Obligatorio"
+    // }
+    // if(!valores.url){
+    //     errors.url="El Url es necesario"
+    // }else if(!/^(ftp|http|https):\/\/[^ "]+$/.test(valores.url)){
+    //     errors.url="El url es Incorrecto"
+    // }
     
-    if (!valores.email){
-        errors.email="El Correo es Obligatorio"
-    } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(valores.email)){
-        errors.email="El Correo es inválido"
-    }
+    // if (!valores.email){
+    //     errors.email="El Correo es Obligatorio"
+    // } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(valores.email)){
+    //     errors.email="El Correo es inválido"
+    // }
     if(!valores.descripcion){
         errors.descripcion="La descripcion del Producto es Obligatoria"
     }

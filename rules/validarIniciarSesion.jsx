@@ -11,7 +11,7 @@ export default function validarIniciarSesion(valores) {
         
     
         if(!valores.password){
-           errors.password="El Password es inválido"
+           errors.password="la Contraseña es requerida"
     
         } else if(valores.password.length<6){
             errors.password="la contraseña debe tener mas de 6 caracteres "

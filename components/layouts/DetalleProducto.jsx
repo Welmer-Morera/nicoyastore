@@ -1,34 +1,42 @@
 import React from 'react';
-import{Imagen} from '../IU/DetalleProductoStyle'
-import  formatDistanceToNow  from 'date-fns/formatDistanceToNow'
+import { Imagen, Producto, DescripProducto, Comentarios, TextoDescripcion, VerMas, Titulo, Precio, DescrpVerMAs, Publicado } from '../IU/DetalleProductoStyle'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { es } from 'date-fns/locale'
+import Link from 'next/link';
+const DetalleProducto = ({ producto }) => {
 
-const DetalleProducto = ({producto}) => {
-
-    const{nombre, descripcion,urlImagen, emprendedor, email, telefono, url, precio, votos , comentarios,creado} =producto
+    const { id, nombre, descripcion, urlImagen, precio, pros, comentarios, creado, contras } = producto
     return (
-         <li>
-             <div>
-                 <div>
+        <Producto>
+            <DescripProducto>
+                <div>
                     <Imagen src={urlImagen} alt="imagen del produto" />
-                 </div>
-                 <div>
-                     <h1>{nombre}</h1>
-                     <h3>₡ {precio}</h3> 
-                     <p>{descripcion}</p>
-                     <div>
-                         <img src="static/img/comentario.png" alt="" />
-                         <p>{comentarios.length} Comentarios</p>
-                     </div>
-                     <p>Publicado hace: {formatDistanceToNow( new Date(creado), {locale: es})}</p>
-                 </div>
-             </div> 
-             <div>
+                </div>
+                <div>
+                    <Titulo>{nombre}</Titulo>
+                    <TextoDescripcion>{descripcion}</TextoDescripcion>
+                    <Precio>₡ {precio}</Precio>
+                    <Comentarios>
+                        <div>
 
-                 <div>&#11088; {votos}</div>
-             </div>  
-         </li>
-          );
+                            <p>&#128172; {comentarios.length} </p>
+                        </div>
+                        <div>&#128077; {pros}</div>
+                        <div>&#128078; {contras}</div>
+
+                    </Comentarios>
+                    <Publicado>Publicado hace: {formatDistanceToNow(new Date(creado), { locale: es })}</Publicado>
+                </div>
+            </DescripProducto>
+            <DescrpVerMAs>
+                <Link href="/productos/[id]" as={`/productos/${id}`}>
+                    <VerMas>Ver más</VerMas>
+                </Link>
+
+
+            </DescrpVerMAs>
+        </Producto>
+    );
 }
- 
+
 export default DetalleProducto;

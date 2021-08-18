@@ -6,7 +6,7 @@ import { FirebaseContext } from '../firebase'
 import useValidacion from '../Hooks/useValidacion'
 import ValidarNuevoProducto from '../rules/validarNuevoProducto'
 import FileUploader from 'react-firebase-file-uploader'
-
+import Error404 from '../components/layouts/Error'
 const INITIAL_STATE = {
   nombre: '',
   descripcion: '',
@@ -32,7 +32,7 @@ const NuevoProducto = () => {
 
   const router = useRouter()
   const { usuario, firebase } = useContext(FirebaseContext)
-
+ 
   const handleUploadStart = () => {
     setProgreso(0);
     setSubiendo(true);
@@ -63,18 +63,36 @@ const handleUploadSuccess = nombre => {
     if (!usuario) {
       return router.push('/Registro')
     }
-    const producto = { nombre, descripcion,urlImagen, emprendedor, email, telefono, url,precio, votos: 0, comentarios: [], creado: Date.now() }
+    const producto = { 
+      nombre, 
+      descripcion,
+      urlImagen,
+      emprendedor:{id:usuario.uid,nombre:usuario.displayName,email:usuario.email}, 
+      telefono, 
+      url,
+      precio,
+      pros: 0,
+      contras:0, 
+      comentarios: [], 
+      creado: Date.now(),
+      votadoPro:[],
+      votadoContra:[]
+     }
     firebase.db.collection('productos').add(producto);
     setError(false)
     return router.push('/')
 
 
   }
+
+ 
   return (
     <Layout>
 
 
-      <Formulario
+      {
+        !usuario? <Error404/>:(
+          <Formulario
         onSubmit={handleSubmit}
         noValidate
       >
@@ -142,30 +160,6 @@ const handleUploadSuccess = nombre => {
             <fieldset>
               <legend>Sobre tu Empresa</legend>
               <CampoDiv>
-                <label htmlFor="Emprendedor">Emprendedor </label>
-                <input
-                  type="text"
-                  id="emprendedor"
-                  placeholder="Nombre del Emprendedor o Empresa"
-                  name="emprendedor"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              </CampoDiv>
-              {errores.emprendedor && <Error>{errores.emprendedor}</Error>}
-              <CampoDiv>
-                <label htmlFor="email">Correo</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Correo"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              </CampoDiv>
-              {errores.email && <Error>{errores.email}</Error>}
-              <CampoDiv>
                 <label htmlFor="telefono">Teléfono</label>
                 <input
                   type="number"
@@ -196,6 +190,8 @@ const handleUploadSuccess = nombre => {
 
 
       </Formulario>
+        )
+      }
 
 
     </Layout>

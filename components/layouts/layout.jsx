@@ -55,13 +55,14 @@ const Layout = props => {
             />
 
             <Head>
-                <html lang="es" />
-                <title>Nicoya Store</title>
+               
+                <title>N Store</title>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
                 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&display=swap" rel="stylesheet" />
                 <link href="/static/css/app.css" rel="stylesheet"/>
+                <link href="/static/css/cargando.css" rel="stylesheet"/>
             </Head>
             <Header />
             <main>
