@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import Layout from '../components/layouts/layout'
 import { Formulario, CampoDiv, InputS, H1, Error, DivCon, DivConte, DivPri } from '../components/IU/formulario'
-import Router, { useRouter } from 'next/router'
+import  { useRouter } from 'next/router'
 import { FirebaseContext } from '../firebase'
 import useValidacion from '../Hooks/useValidacion'
 import ValidarNuevoProducto from '../rules/validarNuevoProducto'
